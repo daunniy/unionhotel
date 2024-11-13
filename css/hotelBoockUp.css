@@ -1,0 +1,231 @@
+@charset "utf-8";
+
+body {
+  font-family: Arial, '맑은 고딕', sans-serif; 
+  max-width: 600px;
+  margin: 0 auto;
+  background:#eee;
+}
+h1, h2, p, div, form, dl, dt, dd { margin:0; padding:0;}
+header{
+  display:flex; justify-content:space-between;
+  background-color:#1b3059;
+  margin-bottom:20px;
+  padding:20px;
+}
+h1 { margin:0px; color:#fff; }
+p { color:#333; }
+header button { border:0px; background:none; color:#fff; }
+
+
+#bookingForm {
+  display:flex;
+  flex-direction:column;
+  gap:20px;
+  padding: 0px 20px;
+}
+.form-group {
+  height:80px;
+  display:flex; flex-direction:column; justify-content:space-around; align-items:center;
+  text-align:center;
+  position:relative;
+  margin:10px;
+}
+input, select {
+  box-sizing: border-box;
+  width: 100%;
+  padding: 8px;
+}
+
+select {
+  border:1px solid #ccc;
+  border-radius:6px;
+}
+#nightsDisplay {
+  background-color:#eee; color:#1b3059;
+  border-radius:25px;
+  width:50px; height:30px; line-height:30px;
+  text-align:center;
+  font-weight:bold;
+  position:absolute;
+  top:160px;
+  left:50%; transform:translateX(-50%);
+}
+
+#bookingForm button {
+  padding: 10px 15px;
+  margin:0 auto;
+  background-color: #1b3059;
+  color:#fff;
+  border-radius:10px;
+  cursor: pointer;
+  width:40vw;
+  font-size:18px;
+}
+
+.checkInOut {
+  display:flex;
+  justify-content:space-between;
+  border-radius:6px;
+  background-color:#fff;
+  padding:20px 0;
+}
+.checkInOut label {
+  display: block;
+  position:absolute;
+  top:0px;
+  background:url("../images/calendar.png") no-repeat left center;
+  background-size:20px 20px;
+  padding-left:24px;
+  font-size:14px;
+  color:#777;
+}
+.date-input {
+  cursor: pointer;
+  background-color: #fff;
+  border:0px; margin:0px; padding:0px;
+  width:100%;
+  opacity:0;
+  position:relative;
+  z-index:100;
+}
+input.date-input {
+  height:100%;
+}
+span.monthDay {
+  display:block;
+  font-size:24px;
+}
+span.year {
+  font-size:14px;
+  color:#777;
+}
+.date-display {
+  position:absolute;
+  top:30px;
+}
+
+.personnel {
+  display:flex; justify-content:space-between;
+  border-radius:6px;
+  background-color:#fff;
+  padding:0 40px;
+}
+.personnel label {
+  font-size:14px;
+  color:#777;
+}
+
+#result {
+  margin-top:40px;
+  padding: 10px 20px;
+  background-color: #fff; box-shadow:2px 2px 4px 0 rgba(0,0,0,0.1);
+  display: none;
+  height:160px;
+}
+#result div {
+  display:flex;
+  align-items:flex-end;
+  gap:10px;
+  border-bottom:1px solid #ccc;
+  margin:10px 0;
+
+}
+#result div h2 {
+  font-size:18px;
+  font-weight:600;
+  letter-spacing:-0.5px;
+  color:#333;
+}
+#result div p {
+  font-size:14px;
+  color:#777;
+  margin:0px;
+}
+#result dl {
+  display:flex; justify-content:space-between;
+  margin:12px 0;
+}
+#result dt {
+  font-weight:500;
+  color:#333;
+}
+#result dd {
+  font-size:14px;
+  color:#333;
+}
+
+@media (min-width:1280px) {
+  body {
+    max-width:100vw;
+  }
+  #bookingForm {
+    flex-direction:row;
+    flex-wrap: wrap;
+    justify-content:space-around;
+    width:100%;
+    padding:0px;
+  }
+  .form-group {
+    margin:0px;
+  }
+
+  #bookingForm button {
+    width:20vw;
+  }
+  .checkInOut {
+    width:65vw;
+    background:none;
+    padding:0px;
+  }
+  .checkInOut .form-group {
+    background:#fff; width:32vw; height:70px;
+    border-radius:10px;
+  }
+  .date-display {
+    left:120px;
+    top:24px;
+  }
+  .checkInOut label {
+    left:20px;
+    top:26px;
+    font-size:18px;
+  }
+  .date-display {}
+  .personnel {
+    width:25vw;
+    height:70px;
+    border-radius:10px;
+    align-items:center;
+  }
+  .personnel .form-group{
+    height:60px;
+    flex-direction:row;
+    gap:4px;
+  }
+  .personnel label {
+    width:60px;
+    font-size:18px;
+  }
+
+  #nightsDisplay {
+    display:none;
+  }
+
+  #result {
+    height:30vh;
+    padding:20px 50px;
+  }
+  #result div h2 {
+    font-size:24px;
+  }
+  #result dl {
+    
+  }
+  #result dt {
+    font-size:20px;
+  }
+  #result dd {
+    font-size:18px;
+  }
+}
